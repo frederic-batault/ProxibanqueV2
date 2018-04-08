@@ -1,91 +1,129 @@
 .container {
-
 	display: grid;
 	grid-template-columns: 102px 1fr 1fr 102px;
 	grid-template-rows: 102px 800px 102px;
-	grid-template-areas: 	"L1 t t L2"
-							"g g d d"
-							"p p p p";
+	grid-template-areas: "L1 t t L2" "g g d d" "p p p p";
 }
+
 .logoSI {
-	background-color: RGB(0,0,0);
+	background-color: RGB(0, 0, 0);
 	grid-area: L1;
 	border-style: solid;
-	border-color:  RGB(0,0,0);
-
+	border-width: 1px;
+	border-color: RGB(0, 0, 0);
 }
+
 .logoBanque {
-	background-color: RGB(0,0,0);
+	background-color: RGB(0, 0, 0);
 	grid-area: L2;
 	border-style: solid;
-	border-color:  RGB(0,0,0);
+	border-width: 1px;
+	border-color: RGB(0, 0, 0);
 }
+
 .titre {
-	background-color: RGB(32,32,32);
+	background-color: RGB(32, 32, 32);
 	grid-area: t;
 	justify-self: stretch;
 	border-style: solid;
-	border-color:  RGB(0,0,0);
+	border-width: 1px;
+	border-color: RGB(0, 0, 0);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
-.titre > h1 {
-	color:white;
+
+.titre>h1 {
+	display: inline-flex;
+	color: RGB(255, 255, 255);
+	align-items: center;
+	justify-self: center;
 }
 
 .pied {
-	background-color: RGB(32,32,32);
-
+	background-color: RGB(32, 32, 32);
 	grid-area: p;
 	justify-self: stretch;
 	border-style: solid;
-	border-color:  RGB(0,0,0);
+	border-width: 1px;
+	border-color: RGB(0, 0, 0);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
-.pied > p {
-		color: RGB (255,255,255);
-}
-.gauche {
-	background-color: RGB(16,0,32);
 
+.pied>p {
+	display: inline-flex;
+	color: RGB(255, 255, 255);
+	align-items: center;
+}
+
+.gauche {
+	background-color: RGB(16, 0, 32);
+	border-style: solid;
+	border-width: 1px;
+	border-color: RGB(0, 0, 0);
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
-	flex-wrap: nowrap;
 	grid-area: g;
 }
+
 .droite {
-	background-color: RGB(0,32,16);
+	background-color: RGB(0, 32, 16);
 	display: flex;
-	color: RGB(255,255,128);
+	border-style: solid;
+	border-width: 1px;
+	border-color: RGB(0, 0, 0);
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
-	flex-wrap: nowrap;
 	grid-area: d;
 }
 
-}
-.droite > .nav {
-	background-color: RGB(192,192,192);
-	height: 50px;
-	width: 100px;
+.gauche>div {
+	color: RGB(255, 255, 255);
 	margin: auto;
-	color:RGB(0,0,0);
-	justify-self: end;
+	line-height: 50px;
+	margin: 10px;
 }
-.gauche > .div  {
-	display: inline-flex;
-	color: RGB (255,255,128);
-	margin: auto;
-}
-.gauche > .div > h2 {
-	color: RGB (255,255,255);
-}
-.droite > form > .nav {
-	background-color: RGB(192,192,192);
-	height: 50px;
-	width: 100px;
-	margin: auto;
-	color:RGB(0,0,0);
-	justify-self: start;
 
+.droite>div {
+	color: RGB(255, 255, 255);
+	margin: auto;
+	line-height: 50px;
+	margin: 10px;
+}
 
+.gauche>div>button {
+	background-color: RGB(210, 200, 255);
+	border-radius: 5px;
+	width: 200px;
+	height: 50px;
+}
+
+.droite>div>button {
+	background-color: RGB(200, 255, 210);
+	border-radius: 5px;
+	width: 200px;
+	height: 50px;
+}
+
+.gauche>div>button>a {
+	color: RGB(0, 0, 0);
+	text-align: center;
+	font-size: 30px;
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	text-decoration: none;
+}
+
+.droite>div>button>a {
+	color: RGB(0, 0, 0);
+	text-align: center;
+	font-size: 30px;
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	text-decoration: none;
+}

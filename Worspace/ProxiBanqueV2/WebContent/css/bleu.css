@@ -31,12 +31,11 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	align-items: center;
 }
 
 .titre>h1 {
-	display: inline-flex;
 	color: RGB(255, 255, 255);
-	align-items: center;
 	justify-self: center;
 }
 
@@ -50,12 +49,12 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	align-items: center;
 }
 
-.pied>p {
-	display: inline-flex;
+.pied>div>p {
 	color: RGB(255, 255, 255);
-	align-items: center;
+	margin: 10px;
 }
 
 .gauche {
@@ -63,11 +62,10 @@
 	color: RGB(255, 255, 128);
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	flex-wrap: nowrap;
 	grid-area: g;
-	display: flex;
 }
 
 .droite {
@@ -75,13 +73,23 @@
 	display: flex;
 	color: RGB(255, 255, 128);
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	flex-wrap: nowrap;
 	grid-area: d;
 }
 
-.droite>.blanc {
+
+
+.droite>div {
+	margin: 10px;
+}
+
+.droite>div>h2 {
+	color: RGB(255, 255, 255);
+}
+
+.droite>div>.blanc {
 	background-color: RGB(210, 200, 255);
 	border-style: double;
 	border-color: RGB(0, 0, 0);
@@ -91,60 +99,76 @@
 	color: RGB(0, 0, 0);
 }
 
-.gauche>h2 {
-	display: inline-flex;
-	color: RGB(255, 255, 255);
-	margin: auto;
-}
-
-.gauche>p {
-	display: inline-flex;
-	color: RGB(255, 255, 128);
-	margin: auto;
-}
-
-.gauche>form {
-	display: inline-flex;
-	color: RGB(255, 255, 128);
-	margin: auto;
-}
-
-.gauche>form>input {
-	height: 30px;
-	border-radius: 5px;
-}
-
-.droite>.nav2 {
-	background-color: RGB(192, 192, 192);
+.droite>div>.nav2 {
+	background-color: RGB(210, 200, 255);
 	border-radius: 5px;
 	height: 30px;
 	width: 50px;
 	margin: auto;
-	height: 30px;
 }
 
-.gauche>.nav1 {
-	
-	background-color: RGB(192, 192, 192);
+.droite>div>.nav2>a {
+	justify-self: center;
+	color: RGB(0, 0, 0);
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	text-decoration: none;
+}
+.gauche>div {
+	margin: 10px;
+}
+.gauche>div>h2 {
+	color: RGB(255, 255, 255);
+
+}
+
+.gauche>div>p {
+	color: RGB(255, 255, 128);
+
+}
+
+.gauche>div>form {
+	color: RGB(255, 255, 128);
+	margin: auto;
+}
+
+.gauche>div>form>input {
+	height: 30px;
+	border-radius: 5px;
+	width: 50px;
+}
+
+.gauche > div > form > button{
+	background-color: RGB(210, 200, 255);
+}
+.gauche > div > form > p>button{
+	background-color: RGB(210, 200, 255);
+}
+.gauche>div>.nav2 {
+	background-color: RGB(210, 200, 255);
 	border-radius: 5px;
 	height: 30px;
 	width: 150px;
 	margin: auto;
-	justify-self: end;
-	
 }
 
-.gauche>.nav1>a {
-	justify-self: stretch;
+.gauche>div>.nav2>a {
+	text-align: center;
 	color: RGB(0, 0, 0);
-}
-.droite>.nav2>a {
-	justify-self: stretch;
-	color: RGB(0, 0, 0);
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	text-decoration: none;
 }
 
-.gauche>button {
-	display: inline-flex;
+.gauche>div>button {
 	height: 30px;
 	border-radius: 5px;
+	background-color: RGB(210, 200, 255);
+}
+.gauche>div>button >a {
+	justify-self: center;
+	color: RGB(0, 0, 0);
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	text-decoration: none;
 }

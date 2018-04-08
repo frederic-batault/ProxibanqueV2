@@ -1,0 +1,41 @@
+.gauche {
+	background-color: RGB(0, 32, 16);
+}
+
+.droite {
+	background-color: RGB(0, 32, 16);
+	color: RGB(128, 255, 255);
+}
+
+.droite>div>.blanc {
+	background-color: RGB(200, 255, 210);
+}
+
+.gauche>div>p {
+	color: RGB(128, 255, 255);
+}
+
+.gauche>div>form {
+	color: RGB(128, 255, 255);
+}
+.gauche>div>form >p {
+	color: RGB(128, 255, 255);
+}
+.droite>div>.nav2 {
+	background-color: RGB(200, 255, 210);
+
+}
+.gauche>div>.nav2 {
+	background-color: RGB(200, 255, 210);
+
+}
+.gauche > div > form > button{
+	background-color: RGB(200, 255, 210);
+}
+.gauche > div > form > p>button{
+	background-color: RGB(200, 255, 210);
+}
+.gauche>div>button {
+
+	background-color: RGB(200, 255, 210);
+}
