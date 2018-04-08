@@ -96,32 +96,32 @@
 	margin: 10px;
 }
 
-.gauche>div>button {
+.gauche>div>.button {
 	background-color: RGB(210, 200, 255);
 	border-radius: 5px;
 	width: 200px;
 	height: 50px;
 }
 
-.droite>div>button {
+.droite>div>.button {
 	background-color: RGB(200, 255, 210);
 	border-radius: 5px;
 	width: 200px;
 	height: 50px;
 }
 
-.gauche>div>button>a {
+.gauche>div>.button>.nav-link {
 	color: RGB(0, 0, 0);
-	text-align: center;
+	
 	font-size: 30px;
 	font-family: "Times New Roman", Times, serif;
 	font-style: normal;
 	text-decoration: none;
 }
 
-.droite>div>button>a {
+.droite>div>.button>.nav-link {
 	color: RGB(0, 0, 0);
-	text-align: center;
+	
 	font-size: 30px;
 	font-family: "Times New Roman", Times, serif;
 	font-style: normal;

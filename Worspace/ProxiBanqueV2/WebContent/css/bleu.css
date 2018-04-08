@@ -48,21 +48,54 @@
 	border-color: RGB(0, 0, 0);
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 }
 
 .pied>div>p {
 	color: RGB(255, 255, 255);
 	margin: 10px;
+	text-align:end;
+}
+.pied>div>img {
+	margin: 10px;
+	text-align:start;
+}
+.pied>div>.nav1 {
+	background-color: RGB(210, 200, 255);
+	border-radius: 5px;
+	height: 30px;
+	width: 150px;
+	margin: auto;
+}
+.pied>div>.nav2 {
+	background-color: RGB(210, 200, 255);
+	border-radius: 5px;
+	height: 30px;
+	width: 50px;
+	margin: auto;
 }
 
+.pied>div>.nav1>a {
+	justify-self: center;
+	color: RGB(0, 0, 0);
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	text-decoration: none;
+}
+.pied>div>.nav2>a {
+	justify-self: center;
+	color: RGB(0, 0, 0);
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	text-decoration: none;
+}
 .gauche {
 	background-color: RGB(16, 0, 32);
 	color: RGB(255, 255, 128);
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	flex-wrap: nowrap;
 	grid-area: g;
@@ -73,7 +106,7 @@
 	display: flex;
 	color: RGB(255, 255, 128);
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	flex-wrap: nowrap;
 	grid-area: d;
@@ -84,9 +117,14 @@
 .droite>div {
 	margin: 10px;
 }
+.droite >div>nav>a{
+	
+}
 
 .droite>div>h2 {
 	color: RGB(255, 255, 255);
+	margin:10px;
+	height: 50px;
 }
 
 .droite>div>.blanc {
@@ -99,27 +137,13 @@
 	color: RGB(0, 0, 0);
 }
 
-.droite>div>.nav2 {
-	background-color: RGB(210, 200, 255);
-	border-radius: 5px;
-	height: 30px;
-	width: 50px;
-	margin: auto;
-}
 
-.droite>div>.nav2>a {
-	justify-self: center;
-	color: RGB(0, 0, 0);
-	font-family: "Times New Roman", Times, serif;
-	font-style: normal;
-	text-decoration: none;
-}
 .gauche>div {
 	margin: 10px;
 }
 .gauche>div>h2 {
 	color: RGB(255, 255, 255);
-
+	height: 50px;
 }
 
 .gauche>div>p {
