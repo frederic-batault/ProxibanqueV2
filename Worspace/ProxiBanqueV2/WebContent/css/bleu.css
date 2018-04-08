@@ -1,0 +1,150 @@
+.container {
+	display: grid;
+	grid-template-columns: 102px 1fr 1fr 102px;
+	grid-template-rows: 102px 800px 102px;
+	grid-template-areas: "L1 t t L2" "g g d d" "p p p p";
+}
+
+.logoSI {
+	background-color: RGB(0, 0, 0);
+	grid-area: L1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: RGB(0, 0, 0);
+}
+
+.logoBanque {
+	background-color: RGB(0, 0, 0);
+	grid-area: L2;
+	border-style: solid;
+	border-width: 1px;
+	border-color: RGB(0, 0, 0);
+}
+
+.titre {
+	background-color: RGB(32, 32, 32);
+	grid-area: t;
+	justify-self: stretch;
+	border-style: solid;
+	border-width: 1px;
+	border-color: RGB(0, 0, 0);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.titre>h1 {
+	display: inline-flex;
+	color: RGB(255, 255, 255);
+	align-items: center;
+	justify-self: center;
+}
+
+.pied {
+	background-color: RGB(32, 32, 32);
+	grid-area: p;
+	justify-self: stretch;
+	border-style: solid;
+	border-width: 1px;
+	border-color: RGB(0, 0, 0);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.pied>p {
+	display: inline-flex;
+	color: RGB(255, 255, 255);
+	align-items: center;
+}
+
+.gauche {
+	background-color: RGB(16, 0, 32);
+	color: RGB(255, 255, 128);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	grid-area: g;
+	display: flex;
+}
+
+.droite {
+	background-color: RGB(16, 0, 32);
+	display: flex;
+	color: RGB(255, 255, 128);
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: nowrap;
+	grid-area: d;
+}
+
+.droite>.blanc {
+	background-color: RGB(210, 200, 255);
+	border-style: double;
+	border-color: RGB(0, 0, 0);
+	height: 500px;
+	width: 300px;
+	margin: auto;
+	color: RGB(0, 0, 0);
+}
+
+.gauche>h2 {
+	display: inline-flex;
+	color: RGB(255, 255, 255);
+	margin: auto;
+}
+
+.gauche>p {
+	display: inline-flex;
+	color: RGB(255, 255, 128);
+	margin: auto;
+}
+
+.gauche>form {
+	display: inline-flex;
+	color: RGB(255, 255, 128);
+	margin: auto;
+}
+
+.gauche>form>input {
+	height: 30px;
+	border-radius: 5px;
+}
+
+.droite>.nav2 {
+	background-color: RGB(192, 192, 192);
+	border-radius: 5px;
+	height: 30px;
+	width: 50px;
+	margin: auto;
+	height: 30px;
+}
+
+.gauche>.nav1 {
+	
+	background-color: RGB(192, 192, 192);
+	border-radius: 5px;
+	height: 30px;
+	width: 150px;
+	margin: auto;
+	justify-self: end;
+	
+}
+
+.gauche>.nav1>a {
+	justify-self: stretch;
+	color: RGB(0, 0, 0);
+}
+.droite>.nav2>a {
+	justify-self: stretch;
+	color: RGB(0, 0, 0);
+}
+
+.gauche>button {
+	display: inline-flex;
+	height: 30px;
+	border-radius: 5px;
+}

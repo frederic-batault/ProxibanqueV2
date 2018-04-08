@@ -1,0 +1,91 @@
+.container {
+
+	display: grid;
+	grid-template-columns: 102px 1fr 1fr 102px;
+	grid-template-rows: 102px 800px 102px;
+	grid-template-areas: 	"L1 t t L2"
+							"g g d d"
+							"p p p p";
+}
+.logoSI {
+	background-color: RGB(0,0,0);
+	grid-area: L1;
+	border-style: solid;
+	border-color:  RGB(0,0,0);
+
+}
+.logoBanque {
+	background-color: RGB(0,0,0);
+	grid-area: L2;
+	border-style: solid;
+	border-color:  RGB(0,0,0);
+}
+.titre {
+	background-color: RGB(32,32,32);
+	grid-area: t;
+	justify-self: stretch;
+	border-style: solid;
+	border-color:  RGB(0,0,0);
+}
+.titre > h1 {
+	color:white;
+}
+
+.pied {
+	background-color: RGB(32,32,32);
+
+	grid-area: p;
+	justify-self: stretch;
+	border-style: solid;
+	border-color:  RGB(0,0,0);
+}
+.pied > p {
+		color: RGB (255,255,255);
+}
+.gauche {
+	background-color: RGB(16,0,32);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: nowrap;
+	grid-area: g;
+}
+.droite {
+	background-color: RGB(0,32,16);
+	display: flex;
+	color: RGB(255,255,128);
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: nowrap;
+	grid-area: d;
+}
+
+}
+.droite > .nav {
+	background-color: RGB(192,192,192);
+	height: 50px;
+	width: 100px;
+	margin: auto;
+	color:RGB(0,0,0);
+	justify-self: end;
+}
+.gauche > .div  {
+	display: inline-flex;
+	color: RGB (255,255,128);
+	margin: auto;
+}
+.gauche > .div > h2 {
+	color: RGB (255,255,255);
+}
+.droite > form > .nav {
+	background-color: RGB(192,192,192);
+	height: 50px;
+	width: 100px;
+	margin: auto;
+	color:RGB(0,0,0);
+	justify-self: start;
+
+
