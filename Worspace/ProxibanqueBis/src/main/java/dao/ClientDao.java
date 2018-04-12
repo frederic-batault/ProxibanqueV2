@@ -64,7 +64,7 @@ public class ClientDao {
 	}
 
 	// méthode UPDATE
-	public Client ModificationClient(Client client) {
+	public Client modificationClient(Client client) {
 
 		// driver
 		try {
@@ -109,7 +109,7 @@ public class ClientDao {
 	}
 
 	// suppression Client
-	public boolean SuppressionClient(Client client) {
+	public boolean suppressionClient(Client client) {
 
 		// driver
 		try {
@@ -146,7 +146,7 @@ public class ClientDao {
 	}
 
 	// méthode CREATE
-	public boolean createClient(Client client) {
+	public boolean creationClient(Client client) {
 
 		// driver
 		try {

@@ -10,8 +10,6 @@ import java.util.List;
 
 import domaine.Compte;
 
-
-
 public class CompteDao {
 
 	public List<Compte> getAll(int idClient) {
@@ -28,13 +26,13 @@ public class CompteDao {
 		// connexion à la base
 		try {
 			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root",
-				"");
+					"");
 
 			// création requête
 			Statement refStatement = refConnection.createStatement();
 
-			// executer requête
-			String refRequete = "SELECT  * FROM client WHERE idClient='" + idClient + "'";
+			// executer requête (LIKE)
+			String refRequete = "SELECT  * FROM compte WHERE idClient='" + idClient + "'";
 			ResultSet rs = refStatement.executeQuery(refRequete);
 
 			// création d'un objet à partir du résultat requête
@@ -44,14 +42,9 @@ public class CompteDao {
 			while (rs.next()) {
 				int idClient2 = rs.getInt("IdClient");
 				double solde = rs.getDouble("solde");
-				String nom = rs.getString("nom");
-				String prenom = rs.getString("prenom");
-				String email = rs.getString("email");
-				String adresse = rs.getString("adresse");
-				String codePostale = rs.getString("codePostale");
-				String ville = rs.getString("ville");
+				String typeCompte = rs.getString("typeCompte");
 
-				Compte refCompte = new Compte(idClient, idConseiller2, nom, prenom, email, adresse, codePostale, ville);
+				Compte refCompte = new Compte(idClient2, solde, typeCompte);
 				liste.add(refCompte);
 
 			}
@@ -62,166 +55,156 @@ public class CompteDao {
 			e.printStackTrace();
 			System.out.println("CATCH !");
 			return null;
+		}
 	}
+
+	// méthode UPDATE
+	public Compte modificationCompte(Compte compte) {
+
+		// driver
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root",
+					"");
+
+			// création requête
+			Statement refStatement = refConnection.createStatement();
+
+			// executer requête UPDATE `compte` SET `solde`=750 WHERE `idCompte`=1;
+
+			String refRequete = "UPDATE compte SET solde='" + compte.getSoldes() + " WHERE idClient="
+					+ compte.getIdCompte();
+			int i = refStatement.executeUpdate(refRequete);
+
+			// modification de l'objet à partir du résultat requête
+			String refRequete2 = "SELECT  * FROM compte WHERE IdCompte =" + compte.getIdCompte();
+			ResultSet rs = refStatement.executeQuery(refRequete2);
+			rs.next();
+			compte.setIdCompte(rs.getInt("IdCompte"));
+			compte.setSoldes(rs.getDouble("soldes"));
+			compte.setIdClient(rs.getInt("idClient"));
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return compte;
 	}
-//
-//	// méthode UPDATE
-//	public Client ModificationClient(Client client) {
-//
-//		// driver
-//		try {
-//			Class.forName("com.mysql.jdbc.Driver");
-//		} catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		try {
-//			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root",
-//					"");
-//
-//			// création requête
-//			Statement refStatement = refConnection.createStatement();
-//
-//			// executer requête
-//
-//			String refRequete = "UPDATE client SET idClient=" + ", 'nom='" + client.getNom() + "', prenom='"
-//					+ client.getPrenom() + "', email=" + client.getEmail() + "', adresse=" + client.getAdresse()
-//					+ "', codePostale=" + client.getCodePostale() + "', ville=" + client.getVille() + ",IdConseiller="
-//					+ client.getIdConseiller() + " WHERE idClient=" + client.getIdClient();
-//			int i = refStatement.executeUpdate(refRequete);
-//
-//			// modification de l'objet à partir du résultat requête
-//			String refRequete2 = "SELECT  * FROM client WHERE IdClient =" + client.getIdClient();
-//			ResultSet rs = refStatement.executeQuery(refRequete2);
-//			rs.next();
-//			client.setIdClient(rs.getInt("IdClient"));
-//			client.setNom(rs.getString("nom"));
-//			client.setPrenom(rs.getString("prenom"));
-//			client.setEmail(rs.getString("email"));
-//			client.setAdresse(rs.getString("adresse"));
-//			client.setCodePostale(rs.getString("codePostale"));
-//			client.setVille(rs.getString("ville"));
-//			client.setIdConseiller(rs.getInt("IdConseiller"));
-//
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return client;
-//	}
-//
-//	// suppression Client
-//	public boolean SuppressionClient(Client client) {
-//
-//		// driver
-//		try {
-//			Class.forName("com.mysql.jdbc.Driver");
-//		} catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//
-//		// connexion à la base
-//		try {
-//			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root",
-//					"");
-//
-//			// création requête
-//			Statement refStatement = refConnection.createStatement();
-//
-//			// executer requête
-//			String refRequete = "DELETE FROM client WHERE idClient=" + client.getIdClient();
-//			int i = refStatement.executeUpdate(refRequete);
-//
-//			if (i >= 1) {
-//				return true;
-//			} else {
-//				return false;
-//			}
-//
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			return false;
-//		}
-//
-//	}
-//
-//	// méthode CREATE
-//	public boolean createClient(Client client) {
-//
-//		// driver
-//		try {
-//			Class.forName("com.mysql.jdbc.Driver");
-//		} catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//
-//		// connexion à la base
-//		try {
-//			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root", "");
-//
-//			// création requête 1
-//			Statement refStatement = refConnection.createStatement();
-//
-//			// executer requête 1
-//			String refRequete = "INSERT INTO client(IdClient, nom, prenom, age, IdConseiller) VALUES ("
-//					+ client.getIdClient() + ",'" + client.getNom() + "','" + client.getPrenom() + "','"
-//					+ client.getEmail() + "','" + client.getAdresse() + "','" + client.getCodePostale() + "',,'"
-//					+ client.getVille() + "'" + client.getIdConseiller() + ")";
-//			int i = refStatement.executeUpdate(refRequete);
-//
-//			// présentation résultats requête 1
-//			return true;
-//
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			return false;
-//		}
-//	}
-//
-//	// méthode GET: lecture client
-//	public Client lectureClient(int idClient) {
-//		Client client = new Client();
-//
-//		// driver
-//		try {
-//			Class.forName("com.mysql.jdbc.Driver");
-//		} catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//
-//		// connexion à la base
-//		try {
-//			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root", "");
-//
-//			// création requête
-//			Statement refStatement = refConnection.createStatement();
-//
-//			// executer requête
-//			String refRequete = "SELECT  * FROM client WHERE IdClient ='" + idClient + "'";
-//			ResultSet rs = refStatement.executeQuery(refRequete);
-//
-//			// création d'un objet à partir du résultat requête
-//			rs.next();
-//			client.setIdClient(rs.getInt("IdClient"));
-//			client.setNom(rs.getString("nom"));
-//			client.setPrenom(rs.getString("prenom"));
-//			client.setEmail(rs.getString("email"));
-//			client.setAdresse(rs.getString("adresse"));
-//			client.setCodePostale(rs.getString("codePostale"));
-//			client.setVille(rs.getString("ville"));
-//			client.setIdConseiller(rs.getInt("IdConseiller"));
-//
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//
-//		}
-//		return client;
-//	}
+
+	// suppression Client
+	public boolean suppressionCompte(Compte compte) {
+
+		// driver
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// connexion à la base
+		try {
+			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root",
+					"");
+
+			// création requête
+			Statement refStatement = refConnection.createStatement();
+
+			// executer requête
+			String refRequete = "DELETE FROM compte WHERE idCompte=" + compte.getIdCompte();
+			int i = refStatement.executeUpdate(refRequete);
+
+			if (i >= 1) {
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+
+	// méthode CREATE
+	public boolean creationCompte(Compte compte) {
+
+		// driver
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// connexion à la base
+		try {
+			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root",
+					"");
+
+			// création requête 1
+			Statement refStatement = refConnection.createStatement();
+
+			// executer requête 1
+			String refRequete = "INSERT INTO compte(IdCompte, soldes, typeCompte, decouvertAutorise, tauxRemuneration, idClient) VALUES ("
+					+ compte.getIdCompte() + ",'" + compte.getSoldes() + "','" + compte.getTypeCompte() + "','"
+					+ compte.getdecouvertAutorise() + "','" + compte.getTauxRemuneration() + "'" + compte.getIdClient()
+					+ ")";
+			int i = refStatement.executeUpdate(refRequete);
+
+			// présentation résultats requête 1
+			return true;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	// méthode GET: lecture client
+	public Compte lectureCompte(int idCompte) {
+		Compte compte = new Compte();
+
+		// driver
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// connexion à la base
+		try {
+			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root",
+					"");
+
+			// création requête
+			Statement refStatement = refConnection.createStatement();
+
+			// executer requête
+			String refRequete = "SELECT  * FROM compte WHERE IdCompte ='" + idCompte + "'";
+			ResultSet rs = refStatement.executeQuery(refRequete);
+
+			// création d'un objet à partir du résultat requête
+			rs.next();
+			compte.setIdCompte(rs.getInt("IdComte"));
+			compte.setSoldes(rs.getDouble("soldes"));
+			compte.setDecouvertAutorise(rs.getDouble("prenom"));
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		}
+		return compte;
+	}
 
 }
