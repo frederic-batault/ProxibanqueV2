@@ -12,9 +12,9 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
 	integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-	crossorigin="anonymous">
+	crossorigin="anonymous"></link>
 <!-- lien CSS maison -->
-<link rel="stylesheet" href="css/cssMaison.css">
+<link rel="stylesheet" href="css/cssMaison.css"></link>
 <!-- liens JS pour Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -49,42 +49,48 @@
 				</div>
 			</div>
 		</div>
-		<div class="milieu">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="mx-auto">
-						<form method="POST"action="connexion">
-							<div class="form-group">
-								<label for="login">Sélectionner votre identifiant</label> <select
-									class="form-control" id="login" name="login">
-									<option>douglas.mbiandou</option>
-									<option>frederic.pean</option>
-									<option>nassur.mhoumad</option>
-									<option>lotfi.azzouz</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="mdp">Entrez votre mot de passe</label> <input
-									type="password" class="form-control" id="mdp"
-									placeholder="Mot de passe" name="password">
-							</div>
-							<button type="submit" class="btn btn-primary" >Entrer</button>
-						</form>
-					</div>
+	</div>
+	<form method="POST" action="conseillerservlet">
+		<button type="submit">Entrer</button>
+	</form>
+
+	<div class="milieu">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="mx-auto">
+					<form method="POST" action="conseillerservlet">
+						<div class="form-group">
+							<label for="login">Sélectionner votre identifiant</label> <select
+								class="form-control" id="login" name="login">
+								<option>douglas.mbiandou</option>
+								<option>frederic.pean</option>
+								<option>nassur.mhoumad</option>
+								<option>lotfi.azzouz</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="inputpassword">Entrez votre mot de passe</label> <input
+								type="password" class="form-control" id="inputpassword"
+								placeholder="Mot de passe" name="password">
+						</div>
+						<button type="submit" class="btn btn-primary">Entrer</button>
+					</form>
 				</div>
-				<div class="bas">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="mx-auto">
-								<p>
-									développé par <img src="images/GTM.png" alt="logo Proxibanque"
-										height="30px">
-								</p>
-							</div>
+			</div>
+			<div class="bas">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mx-auto">
+							<p>
+								développé par <img src="images/GTM.png" alt="logo Proxibanque"
+									height="30px">
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+
 </body>
 </html>

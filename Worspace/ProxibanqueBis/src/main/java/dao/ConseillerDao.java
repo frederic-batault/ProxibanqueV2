@@ -13,7 +13,6 @@ public class ConseillerDao {
 	public Conseiller lecture (String log) {
 		// ETAPE1: chargement du driver
 
-		System.out.println("Chargement du Driver");
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 
@@ -23,14 +22,15 @@ public class ConseillerDao {
 
 			// Etape 3: preparation de la requete
 			Statement stm = maConnection.createStatement();
-			String s = "SELECT * FROM Conseiller WHERE login  =" + log;
-
+			String s = "SELECT * FROM Conseiller WHERE login  ='" + log + "'";
 			// execution d'une selection
 			ResultSet rs = stm.executeQuery(s);
 			
 			// Etape 5 : lecture des données lecture d'une selection
 						
-			rs.next();
+		
+				rs.next();
+			
 			int idConseiller = rs.getInt("idConseiller");
 			String nom =rs.getString("nom");
 			String prenom =rs.getString("prenom");
