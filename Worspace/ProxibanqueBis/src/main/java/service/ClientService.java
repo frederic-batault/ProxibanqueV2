@@ -13,22 +13,22 @@ public class ClientService {
 	}
 	
 	// METHODE POUR UPDATE
-		public Client updateService(Client refClient) {
+		public Client modificationService(Client refClient) {
 			ClientDao refdao = new ClientDao();
-			Client refClient2 = refdao.ModificationClient(refClient);
+			Client refClient2 = refdao.modificationClient(refClient);
 			return refClient2;
 		}
 
 		// METHODE POUR DELETE
-		public boolean deleteService(Client refClient) {
+		public boolean supressionService(Client refClient) {
 			ClientDao refdao = new ClientDao();
-			boolean temoin = refdao.SuppressionClient(refClient);
+			boolean temoin = refdao.suppressionClient(refClient);
 			return temoin;
 		}
 		// méthode pour CREATE
-		public Client createService(Client refClient) {
+		public Client creationService(Client refClient) {
 			ClientDao refdao = new ClientDao();
-			refdao.createClient(refClient);
+			refdao.creationClient(refClient);
 			return refClient;
 
 		}
