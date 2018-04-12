@@ -4,18 +4,23 @@ public class Compte {
 	
 	private int idCompte;
 	private double soldes;
+	private String typeCompte;
 	
 	// constructeur
-	public Compte(int idCompte, double soldes) {
+	
+	public Compte(int idCompte, double soldes, String typeCompte) {
 		super();
 		this.idCompte = idCompte;
 		this.soldes = soldes;
+		this.typeCompte = typeCompte;
 	}
+
 	
 	public Compte() {
 		super();
 	}
 
+	
 	// getteur et setteur
 	public int getIdCompte() {
 		return idCompte;

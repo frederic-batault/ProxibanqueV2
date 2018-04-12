@@ -14,56 +14,56 @@ import domaine.Compte;
 
 public class CompteDao {
 
-//	public List<Compte> getAll(int idConseiller) {
-//		List<Compte> liste = new ArrayList<Compte>();
-//
-//		// driver
-//		try {
-//			Class.forName("com.mysql.jdbc.Driver");
-//		} catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//
-//		// connexion à la base
-//		try {
-//			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root",
-//					"");
-//
-//			// création requête
-//			Statement refStatement = refConnection.createStatement();
-//
-//			// executer requête
-//			String refRequete = "SELECT  * FROM client WHERE idConseiller='" + idConseiller + "'";
-//			ResultSet rs = refStatement.executeQuery(refRequete);
-//
-//			// création d'un objet à partir du résultat requête
-//
-//			// création d'une set de références
-//
-//			while (rs.next()) {
-//				int idClient = rs.getInt("IdClient");
-//				int idConseiller2 = rs.getInt("IdConseiller");
-//				String nom = rs.getString("nom");
-//				String prenom = rs.getString("prenom");
-//				String email = rs.getString("email");
-//				String adresse = rs.getString("adresse");
-//				String codePostale = rs.getString("codePostale");
-//				String ville = rs.getString("ville");
-//
-//				Client refClient = new Client(idClient, idConseiller2, nom, prenom, email, adresse, codePostale, ville);
-//				liste.add(refClient);
-//
-//			}
-//			return liste;
-//
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			System.out.println("CATCH !");
-//			return null;
-//		}
-//	}
+	public List<Compte> getAll(int idClient) {
+		List<Compte> liste = new ArrayList<Compte>();
+
+		// driver
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// connexion à la base
+		try {
+			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root",
+				"");
+
+			// création requête
+			Statement refStatement = refConnection.createStatement();
+
+			// executer requête
+			String refRequete = "SELECT  * FROM client WHERE idClient='" + idClient + "'";
+			ResultSet rs = refStatement.executeQuery(refRequete);
+
+			// création d'un objet à partir du résultat requête
+
+			// création d'une set de références
+
+			while (rs.next()) {
+				int idClient2 = rs.getInt("IdClient");
+				double solde = rs.getDouble("solde");
+				String nom = rs.getString("nom");
+				String prenom = rs.getString("prenom");
+				String email = rs.getString("email");
+				String adresse = rs.getString("adresse");
+				String codePostale = rs.getString("codePostale");
+				String ville = rs.getString("ville");
+
+				Compte refCompte = new Compte(idClient, idConseiller2, nom, prenom, email, adresse, codePostale, ville);
+				liste.add(refCompte);
+
+			}
+			return liste;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("CATCH !");
+			return null;
+	}
+	}
 //
 //	// méthode UPDATE
 //	public Client ModificationClient(Client client) {
@@ -160,7 +160,7 @@ public class CompteDao {
 //
 //		// connexion à la base
 //		try {
-//			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdd", "root", "");
+//			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root", "");
 //
 //			// création requête 1
 //			Statement refStatement = refConnection.createStatement();
@@ -196,7 +196,7 @@ public class CompteDao {
 //
 //		// connexion à la base
 //		try {
-//			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdd", "root", "");
+//			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root", "");
 //
 //			// création requête
 //			Statement refStatement = refConnection.createStatement();

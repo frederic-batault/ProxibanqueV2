@@ -158,7 +158,7 @@ public class ClientDao {
 
 		// connexion à la base
 		try {
-			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdd", "root", "");
+			Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root", "");
 
 			// création requête 1
 			Statement refStatement = refConnection.createStatement();
@@ -193,7 +193,7 @@ public class ClientDao {
 
 			// connexion à la base
 			try {
-				Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdd", "root", "");
+				Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root", "");
 
 				// création requête
 				Statement refStatement = refConnection.createStatement();
