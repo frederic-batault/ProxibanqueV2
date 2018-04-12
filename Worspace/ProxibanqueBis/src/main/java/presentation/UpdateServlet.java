@@ -41,7 +41,7 @@ public class UpdateServlet extends HttpServlet {
 		
 		int idClient = Integer.parseInt(request.getParameter("clientU")) ;
 		ClientService refClientService = new ClientService();
-		Client refClient = refClientService.lecture(idClient);
+		Client refClient = refClientService.lectureService(idClient);
 		HttpSession refSession = request.getSession();
 		refSession.setAttribute("clientU", refClient);
 		
