@@ -1,6 +1,7 @@
 package presentation;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import domaine.Client;
 import domaine.Conseiller;
 import service.ConseillerService;
 
@@ -56,9 +58,21 @@ public class ConnexionServlet extends HttpServlet {
 			HttpSession refSession = request.getSession();
 			refSession.setAttribute("conseiller", refConseiller);
 			RequestDispatcher dispatcher;			
-			
+			//affichage de la page du conseiller
 			dispatcher=request.getRequestDispatcher("Conseiller.jsp");
 			dispatcher.forward(request, response);
+			// récupération de l'ID du conseiller connecté
+			int idConseiller = refConseiller.getIdConseiller();
+
+			// Utilisation des informations instanciation de la classe service
+			ConseillerService refConseillerService = new ConseillerService();
+
+			// appel de la méthode
+
+			List<Client> refListe = refConseillerService.getAll(idConseiller);
+
+			
+
 		} else {
 			RequestDispatcher dispatcher=request.getRequestDispatcher("EchecConnexion.jsp");
 			dispatcher.forward(request, response);

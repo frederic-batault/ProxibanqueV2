@@ -53,7 +53,8 @@
 				</div>
 
 			</form>
-
+			<!-- affichage de la liste des clients -->
+			<!-- écriture de la liste dans la session -->
 			<a class="btn btn-primary" href="Edition.jsp" role="button">Mettre
 				à jour</a> <a class="btn btn-primary" href="Comptes.jsp" role="button">Afficher
 				comptes</a> <a class="btn btn-primary" href="Virement.jsp" role="button">Virement</a>
