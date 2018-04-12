@@ -59,6 +59,7 @@ public class ConnexionServlet extends HttpServlet {
 			
 			dispatcher=request.getRequestDispatcher("Conseiller.jsp");
 			dispatcher.forward(request, response);
+			
 		} else {
 			RequestDispatcher dispatcher=request.getRequestDispatcher("EchecConnexion.jsp");
 			dispatcher.forward(request, response);
