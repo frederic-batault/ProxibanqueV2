@@ -1,0 +1,24 @@
+.milieu {
+	background-color: RGB(32, 0, 128);
+}
+
+.haut {
+	background-color: RGB(128, 128, 128);
+}
+
+.bas {
+	background-color: RGB(128, 128, 128);
+	color: RGB(255, 255, 255);
+}
+
+h1 {
+	color: RGB(255, 255, 128);
+}
+
+label {
+	color: RGB(255, 255, 128);
+}
+
+.milieu {
+	color: RGB(255, 255, 128);
+}
