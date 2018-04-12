@@ -5,12 +5,18 @@ public class Compte {
 	private int idCompte;
 	private double soldes;
 	
+	// constructeur
 	public Compte(int idCompte, double soldes) {
 		super();
 		this.idCompte = idCompte;
 		this.soldes = soldes;
 	}
 	
+	public Compte() {
+		super();
+	}
+
+	// getteur et setteur
 	public int getIdCompte() {
 		return idCompte;
 	}
