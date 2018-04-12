@@ -7,11 +7,11 @@ public class ConseillerService {
 		
 		
 		public boolean authentification (String login, String password1) {
-			ConseillerDao infoConseiller = new ConseillerDao();
+		ConseillerDao infoConseiller = new ConseillerDao();
 		Conseiller conseiller = infoConseiller.lecture(login);
-		String password2=conseiller.getLogin();
+		String password2=conseiller.getPassword();
 		
-		if( password1==password2) {
+		if( password1.equals(password2)) {
 			return true;
 
 }
