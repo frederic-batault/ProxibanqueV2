@@ -2,12 +2,12 @@ package domaine;
 
 public class CompteCourant extends Compte {
 
-	private double decouvertAutorisé;
+	private double decouvertAutorise;
 
 	// constructeur
-	public CompteCourant(int idCompte, double soldes, double decouvertAutorisé) {
+	public CompteCourant(int idCompte, double soldes, double decouvertAutorise) {
 		super(idCompte, soldes);
-		this.decouvertAutorisé = decouvertAutorisé;
+		this.decouvertAutorise = decouvertAutorise;
 	}
 
 	public CompteCourant(int idCompte, double soldes) {
@@ -16,12 +16,12 @@ public class CompteCourant extends Compte {
 	}
 
 	// setteur et getteur
-	public double getDecouvertAutorisé() {
-		return decouvertAutorisé;
+	public double getDecouvertAutorise() {
+		return decouvertAutorise;
 	}
 
-	public void setDecouvertAutorisé(double decouvertAutorisé) {
-		this.decouvertAutorisé = decouvertAutorisé;
+	public void setDecouvertAutorise(double decouvertAutorise) {
+		this.decouvertAutorise = decouvertAutorise;
 	}
 
 }

@@ -39,10 +39,52 @@
 				<label for="nom" class="col-2 col-form-label">Nom</label>
 				<div class="col-10">
 					<input class="form-control" type="text"
-						value=<%=refClient.getNom()%> id="nom">
+						value=<%=refClient.getNom()%> id="nom" name="nom">
 				</div>
-				<button type="submit" class="btn btn-primary">Modifier</button>
+			</div>
+			<div class="form-group row">
+				<label for="prenom" class="col-2 col-form-label">Prénom</label>
+				<div class="col-10">
+					<input class="form-control" type="text"
+						value=<%=refClient.getPrenom()%> id="prenom" name='prenom"'>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="adresse" class="col-2 col-form-label">Adresse</label>
+				<div class="col-10">
+					<input class="form-control" type="text"
+						value=<%=refClient.getAdresse()%> id="adresse" name="adresse">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="code" class="col-2 col-form-label">Code postal</label>
+				<div class="col-10">
+					<input class="form-control" type="text"
+						value=<%=refClient.getCodePostale()%> id="code" name="code">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="ville" class="col-2 col-form-label">Ville</label>
+				<div class="col-10">
+					<input class="form-control" type="text"
+						value=<%=refClient.getVille()%> id="villle" name="ville">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="mail" class="col-2 col-form-label">E-mail</label>
+				<div class="col-10">
+					<input class="form-control" type="text"
+						value=<%=refClient.getEmail()%> id="mail" name="mail">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Modifier</button>
 		</form>
+		<nav>
+			<a href="index.jsp">Retour à l'accueil</a>
+		</nav>
+		<nav>
+			<a href="Conseiller.jsp">Retour à votre liste de clients</a>
+		</nav>
 		<div class="bas">
 			<p>
 				Créé par <img src="images/GTM.png" alt="logo GT'M" height="30px">

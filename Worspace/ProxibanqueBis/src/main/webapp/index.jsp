@@ -50,10 +50,6 @@
 			</div>
 		</div>
 	</div>
-	<form method="POST" action="conseillerservlet">
-		<button type="submit">Entrer</button>
-	</form>
-
 	<div class="milieu">
 		<div class="row">
 			<div class="col-md-12">
