@@ -3,13 +3,17 @@
 
 <%@ page import="domaine.Conseiller"%>
 
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.ArrayList"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <!-- Meta -->
 <meta charset="utf-8"></meta>
 <!-- lien CSS maison -->
-<link rel="stylesheet" href="css/cssMaison2.css">
+<!--<link rel="stylesheet" href="css/cssMaison2.css">-->
 
 <!-- Titre de la page -->
 <title>ProxibanqueV2:Echec connexion</title>
@@ -41,6 +45,40 @@
 
 
 			<p>Sélectionner un client, puis une des actions suivantes</p>
+			
+			<div class="row text-center">
+				<table class="table  table-striped">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Nom</th>
+							<th>Prenom</th>
+							<th>email</th>
+							<th>Adresse</th>
+							<th>CodePostale</th>
+							<th>Ville</th>
+							<th>idConseiller</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<c:forEach items="${listeClients}" var="lesClients">
+
+							<tr>
+								<td><c:out value="${lesClients.idClient}" /></td>
+								<td><c:out value="${lesClients.nom}" /></td>
+								<td><c:out value="${lesClients.prenom}" /></td>
+								<td><c:out value="${lesClients.email}" /></td>
+								<td><c:out value="${lesClients.adresse}" /></td>
+								<td><c:out value="${lesClients.codePostale}" /></td>
+								<td><c:out value="${lesClients.ville}" /></td>
+								<td><c:out value="${lesClients.idConseiller}" /></td>
+
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
 			<form>
 				<div class="form-group row">
 					<label for="client" class="col-2 col-form-label">Client : </label>
@@ -51,7 +89,7 @@
 						<button type="submit" class="btn btn-primary">Valider</button>
 					</div>
 				</div>
-
+				
 			</form>
 			<!-- affichage de la liste des clients -->
 			<!-- écriture de la liste dans la session -->
