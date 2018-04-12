@@ -191,7 +191,7 @@ public class ClientDao {
 				e.printStackTrace();
 			}
 
-			// connexion à la base
+			// connexion à la base 
 			try {
 				Connection refConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque", "root", "");
 
