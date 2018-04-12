@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 12 Avril 2018 à 08:17
+-- Généré le :  Jeu 12 Avril 2018 à 16:47
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -37,6 +37,18 @@ CREATE TABLE `client` (
   `idConseiller` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `client`
+--
+
+INSERT INTO `client` (`idClient`, `nom`, `prenom`, `adresse`, `codepostale`, `ville`, `email`, `idConseiller`) VALUES
+(1, 'Sersoub', 'Nabil', '75 rue de londre', '69002', 'Lyon', 'sersoub.nabil@gmail.com', 1),
+(2, 'Batault', 'Frederic', '3 rue du paradis', '69001', 'Lyon', 'batault.frederic@gmail.com', 2),
+(3, 'Demolis', 'Alexendre', '34 rue de la boustifais', '69005', 'Lyon', 'alexendre-demolis@outlook.com', 1),
+(4, 'Hedi', 'Ines', '8 bis rue de la bastille', '38600', 'Fontaine', 'hedi-ines@gmail.com', 2),
+(5, 'Blondel', 'Benoit', '154 avenue des champs', '69006', 'Lyon', 'benoit.blondel@gmail.com', 1),
+(6, 'Mannou', 'Tarik', '10 boulevard de paris', '69008', 'Lyon', 'mannou.le meilleur@gtm.com', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -55,24 +67,24 @@ CREATE TABLE `compte` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `conseillerclient`
+-- Structure de la table `conseiller`
 --
 
-CREATE TABLE `conseillerclient` (
+CREATE TABLE `conseiller` (
   `IdConseiller` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `login` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `conseillerclient`
+-- Contenu de la table `conseiller`
 --
 
-INSERT INTO `conseillerclient` (`IdConseiller`, `nom`, `prenom`, `login`, `password`) VALUES
+INSERT INTO `conseiller` (`IdConseiller`, `nom`, `prenom`, `login`, `password`) VALUES
 (1, 'Mbiandou', 'Douglas', 'douglas.mbiandou', 'Objis.java'),
-(2, 'Pean', 'Frederic', 'frediric.pean', 'Gtm.formation'),
+(2, 'Pean', 'Frederic', 'frederic.pean', 'Gtm.formation'),
 (3, 'Mhoumad', 'Nassur', 'nassur.mhounad', 'Objis.ajile'),
 (4, 'Azzouz', 'Lotfi', 'lotfi.azzouz', 'Gtm.proxibanque');
 
@@ -95,9 +107,9 @@ ALTER TABLE `compte`
   ADD KEY `fk_client` (`idClient`);
 
 --
--- Index pour la table `conseillerclient`
+-- Index pour la table `conseiller`
 --
-ALTER TABLE `conseillerclient`
+ALTER TABLE `conseiller`
   ADD PRIMARY KEY (`IdConseiller`);
 
 --
@@ -108,16 +120,16 @@ ALTER TABLE `conseillerclient`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `idClient` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idClient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `compte`
 --
 ALTER TABLE `compte`
   MODIFY `idCompte` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `conseillerclient`
+-- AUTO_INCREMENT pour la table `conseiller`
 --
-ALTER TABLE `conseillerclient`
+ALTER TABLE `conseiller`
   MODIFY `IdConseiller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
