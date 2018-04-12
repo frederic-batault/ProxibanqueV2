@@ -2,17 +2,36 @@ package domaine;
 
 public class Client {
 	
-	public int idClient;
-	public int idConseiller;
-	public String nom;
-	public String prenom;
-	public String email;
-	public String adresse; 
-	public String codePostale;
-	public String ville;
+	private int idClient;
+	private int idConseiller;
+	private String nom;
+	private String prenom;
+	private String email;
+	private String adresse; 
+	private String codePostale;
+	private String ville;
 	
+	// constructeur
+	
+	public Client(int idClient, int idConseiller, String nom, String prenom, String email, String adresse,
+			String codePostale, String ville) {
+		super();
+		this.idClient = idClient;
+		this.idConseiller = idConseiller;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.adresse = adresse;
+		this.codePostale = codePostale;
+		this.ville = ville;
+	}
+	public Client() {
+		super();
+	}
 	// getters/ setters
 	
+	
+
 	public int getIdClient() {
 		return idClient;
 	}

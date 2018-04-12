@@ -2,11 +2,11 @@ package domaine;
 
 public class Conseiller {
 	
-	public int idConseiller;
-	public String nom;
-	public String prenom;
-	public String login; 
-	public String password;
+	private int idConseiller;
+	private String nom;
+	private String prenom;
+	private String login; 
+	private String password;
 	
 	
 	public Conseiller(int idConseiller, String nom, String prenom, String login, String password) {
@@ -51,9 +51,6 @@ public class Conseiller {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
-	
+			
 
 }
