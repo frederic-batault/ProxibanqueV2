@@ -25,6 +25,21 @@ public class Client {
 		this.codePostale = codePostale;
 		this.ville = ville;
 	}
+	
+	
+	public Client(int idClient, String nom, String prenom, String email, String adresse, String codePostale,
+			String ville) {
+		super();
+		this.idClient = idClient;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.adresse = adresse;
+		this.codePostale = codePostale;
+		this.ville = ville;
+	}
+
+
 	public Client() {
 		super();
 	}

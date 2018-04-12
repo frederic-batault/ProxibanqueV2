@@ -8,7 +8,7 @@ public class Conseiller {
 	private String login; 
 	private String password;
 	
-	
+	// Constructeur
 	public Conseiller(int idConseiller, String nom, String prenom, String login, String password) {
 		super();
 		this.idConseiller = idConseiller;
