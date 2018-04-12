@@ -53,7 +53,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="mx-auto">
-						<form method="POST">
+						<form method="POST"action="connexion">
 							<div class="form-group">
 								<label for="login">Sélectionner votre identifiant</label> <select
 									class="form-control" id="login" name="login">
@@ -68,7 +68,7 @@
 									type="password" class="form-control" id="mdp"
 									placeholder="Mot de passe" name="password">
 							</div>
-							<button type="submit" class="btn btn-primary">Entrer</button>
+							<button type="submit" class="btn btn-primary" >Entrer</button>
 						</form>
 					</div>
 				</div>
