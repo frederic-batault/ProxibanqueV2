@@ -1,0 +1,51 @@
+.container {
+	display: grid;
+	grid-template-columns: 100px 900px 100px;
+	grid-template-rows: 100px 500px 100px;
+	grid-template-areas: "l1 t l2" "c c c" "b b b";
+}
+
+.logo1 {
+	background-color: RGB(128, 128, 128);
+	grid-area: l1;
+	justify-self: start;
+}
+
+.logo2 {
+	background-color: RGB(128, 128, 128);
+	grid-area: l2;
+	justify-self: end;
+}
+
+.titre {
+	background-color: RGB(128, 128, 128);
+	grid-area: t;
+	justify-self: stretch;
+	color: RGB(255, 255, 255);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.centre {
+	background-color: RGB(32, 0, 128);
+	grid-area: c;
+	justify-self: stretch;
+	color: RGB(255, 255, 128);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.bas {
+	background-color: RGB(128, 128, 128);
+	grid-area: c;
+	justify-self: stretch;
+	color: RGB(255, 255, 255);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
