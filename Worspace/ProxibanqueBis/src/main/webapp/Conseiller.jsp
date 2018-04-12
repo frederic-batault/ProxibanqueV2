@@ -5,7 +5,7 @@
 
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -16,7 +16,7 @@
 <!--<link rel="stylesheet" href="css/cssMaison2.css">-->
 
 <!-- Titre de la page -->
-<title>ProxibanqueV2:Echec connexion</title>
+<title>ProxibanqueV2:Espace conseiller</title>
 </head>
 <body>
 
@@ -45,7 +45,7 @@
 
 
 			<p>Sélectionner un client, puis une des actions suivantes</p>
-			
+
 			<div class="row text-center">
 				<table class="table  table-striped">
 					<thead>
@@ -79,23 +79,41 @@
 					</tbody>
 				</table>
 			</div>
-			<form>
-				<div class="form-group row">
-					<label for="client" class="col-2 col-form-label">Client : </label>
-					<div class="col-8">
-						<input class="form-control" type="text" id="client" name="client">
-					</div>
-					<div class="col-2">
-						<button type="submit" class="btn btn-primary">Valider</button>
-					</div>
-				</div>
-				
+			<form method="POST" action="update">
+				<p>
+					n° de client : </label> <input class="form-control" type="text" id="client"
+						name="clientU">
+
+					<button type="submit" class="btn btn-primary">Mettre à
+						jour</button>
+
+				</p>
+
+			</form>
+
+			<form method="POST" action="comptes">
+				<p>
+					<label for="client" class="col-4 col-form-label">n° de
+						client : </label> <input class="form-control" type="text" id="client"
+						name="clientC">
+
+					<button type="submit" class="btn btn-primary">Comptes</button>
+				</p>
+
+			</form>
+			<form method="POST" action="virement">
+				<p>
+					<label for="client" class="col-4 col-form-label">n° de
+						client : </label> <input class="form-control" type="text" id="client"
+						name="clientV">
+
+					<button type="submit" class="btn btn-primary">Virement</button>
+				</p>
+
 			</form>
 			<!-- affichage de la liste des clients -->
 			<!-- écriture de la liste dans la session -->
-			<a class="btn btn-primary" href="Edition.jsp" role="button">Mettre
-				à jour</a> <a class="btn btn-primary" href="Comptes.jsp" role="button">Afficher
-				comptes</a> <a class="btn btn-primary" href="Virement.jsp" role="button">Virement</a>
+
 
 
 			<nav>
