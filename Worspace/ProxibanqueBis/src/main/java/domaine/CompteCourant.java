@@ -5,6 +5,7 @@ public class CompteCourant extends Compte {
 	private double decouvertAutorise;
 
 	// constructeur
+
 	public CompteCourant(int idCompte, double soldes, String typeCompte, double decouvertAutorise) {
 		super(idCompte, soldes, typeCompte);
 		this.decouvertAutorise = decouvertAutorise;
