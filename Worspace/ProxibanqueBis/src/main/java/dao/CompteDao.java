@@ -14,52 +14,52 @@ import domaine.CompteEpargne;
 
 public class CompteDao {
 
-	// public List<Compte> getAll(int idConseiller) {
-	// List<Compte> liste = new ArrayList<Compte>();
-	//
-	// // driver
-	// try {
-	// Class.forName("com.mysql.jdbc.Driver");
-	// } catch (ClassNotFoundException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	//
-	// // connexion à la base
-	// try {
-	// Connection refConnection =
-	// DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque",
-	// "root",
-	// "");
-	//
-	// // création requête
-	// Statement refStatement = refConnection.createStatement();
-	//
-	// // executer requête (LIKE)
-	// String refRequete = "SELECT * FROM compte WHERE idClient='" + idClient + "'";
-	// ResultSet rs = refStatement.executeQuery(refRequete);
-	//
-	// // création d'un objet à partir du résultat requête
-	//
-	// // création d'une set de références
-	//
-	// while (rs.next()) {
-	// int idCompte =rs.getInt("idCompte");
-	// int idClient2 = rs.getInt("IdClient");
-	// double solde = rs.getDouble("solde");
-	// String typeCompte = rs.getString("typeCompte");
-	// Compte refCompte = new Compte(idCompte, solde, typeCompte, idClient2);
-	// liste.add(refCompte);
-	//
-	// }
-	// return liste;
-	//
-	// } catch (SQLException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// System.out.println("CATCH !");
-	// return null;
-	// }
+	 public List<Compte> getAll(int idConseiller) {
+	 List<Compte> liste = new ArrayList<Compte>();
+	
+	 // driver
+	 try {
+	 Class.forName("com.mysql.jdbc.Driver");
+	 } catch (ClassNotFoundException e) {
+	 // TODO Auto-generated catch block
+	 e.printStackTrace();
+	 }
+	
+	 // connexion à la base
+	 try {
+	 Connection refConnection =
+	 DriverManager.getConnection("jdbc:mysql://localhost:3306/Proxibanque",
+	 "root",
+	 "");
+	
+	 // création requête
+	 Statement refStatement = refConnection.createStatement();
+	
+	 // executer requête (LIKE)
+	 String refRequete = "SELECT * FROM compte WHERE idClient='" + idConseiller + "'";
+	 ResultSet rs = refStatement.executeQuery(refRequete);
+	
+	 // création d'un objet à partir du résultat requête
+	
+	 // création d'une set de références
+	
+	 while (rs.next()) {
+	 int idCompte =rs.getInt("idCompte");
+	 int idClient2 = rs.getInt("IdClient");
+	 double solde = rs.getDouble("solde");
+	 String typeCompte = rs.getString("typeCompte");
+	 Compte refCompte = new Compte(idCompte, solde, typeCompte, idClient2);
+	 liste.add(refCompte);
+	
+	 }
+	 return liste;
+	
+	 } catch (SQLException e) {
+	 // TODO Auto-generated catch block
+	 e.printStackTrace();
+	 System.out.println("CATCH !");
+	 return null;
+	 }
 	}
 
 	// méthode UPDATE

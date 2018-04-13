@@ -31,7 +31,7 @@ public class CompteService {
 		CompteCourant refCompte = refdao.lectureCompteCourant(idClient);
 		return refCompte;
 	}
-	// METHODE pour LIRE compte Courant
+	// METHODE pour LIRE compte Epargne
 		public CompteEpargne lectureEpargne(int idClient) {
 			CompteDao refdao = new CompteDao();
 			CompteEpargne refCompte = refdao.lectureCompteEpargne(idClient);

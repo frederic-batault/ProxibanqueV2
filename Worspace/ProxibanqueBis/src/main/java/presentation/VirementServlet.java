@@ -17,17 +17,17 @@ import domaine.CompteCourant;
 import domaine.CompteEpargne;
 import service.ClientService;
 import service.CompteService;
-@WebServlet("/comptes")
+@WebServlet("/virement")
 /**
  * Servlet implementation class ComptesServlet
  */
-public class ComptesServlet extends HttpServlet {
+public class VirementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ComptesServlet() {
+    public VirementServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,22 +37,22 @@ public class ComptesServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int idClient = Integer.parseInt(request.getParameter("clientC"));
+		
 		ClientService refClientService = new ClientService();
 		Client refClient = refClientService.lectureService(idClient);
 		HttpSession refSession = request.getSession();
-		refSession.setAttribute("clientCompte", refClient);
+		refSession.setAttribute("clientVirement", refClient);
 
 		RequestDispatcher dispatcher;
-		dispatcher = request.getRequestDispatcher("Comptes.jsp");
+		dispatcher = request.getRequestDispatcher("Virement.jsp");
 		dispatcher.forward(request, response);
-
+		
+		ClientCompte refClientCompte = new ClientCompte;
 		CompteService refCompteService = new CompteService();
-		List<Compte> refListe = refCompteService.getAllService(idClient);
-		CompteCourant refCompteCourant = refCompteService.lectureCourant(idClient);
-		CompteEpargne refCompteEpargne = refCompteService.lectureEpargne(idClient);
-		refSession.setAttribute("Courant", refCompteCourant);
-		refSession.setAttribute("Epargne", refCompteEpargne);
+		List<ClientCompte> refListe = refComptetService.getAllService(idConseiller);
+		refSession.setAttribute("listeClients", refListe);
+
+
 	}
 
 	/**

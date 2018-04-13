@@ -49,7 +49,7 @@ public class UpdateServlet2 extends HttpServlet {
 
 		// 2-récupération des anciennes valeurs
 		HttpSession refSession = request.getSession();
-		Client ancienClient = (Client) refSession.getAttribute();
+		Client ancienClient = (Client) refSession.getAttribute("ClientC");
 		String ancienNom = ancienClient.getNom();
 		String ancienPrenom = ancienClient.getPrenom();
 		String ancienAdresse = ancienClient.getAdresse();
@@ -62,35 +62,41 @@ public class UpdateServlet2 extends HttpServlet {
 		// 3-test si le champ veut être modifié : si oui-> nouvelle valeur = valeur
 		// entrée, ni non ->
 		// nouvelle valeur = ancienne valeur
+		String nouveauNom;
+		String nouveauPrenom;
+		String nouveauAdresse;
+		String nouveauCodePostal;
+		String nouveauVille;
+		String nouveauEmail;
 		if (nom.equals("")) {
-			String nouveauNom = ancienNom;
+			nouveauNom = ancienNom;
 		} else {
-			String nouveauNom = nom;
+			nouveauNom = nom;
 		}
 		if (prenom.equals("")) {
-			String nouveauPrenom = ancienPrenom;
+			nouveauPrenom = ancienPrenom;
 		} else {
-			String nouveauPrenom = prenom;
+			nouveauPrenom = prenom;
 		}
 		if (adresse.equals("")) {
-			String nouveauAdresse = ancienAdresse;
+			nouveauAdresse = ancienAdresse;
 		} else {
-			String nouveauAdresse = adresse;
+			nouveauAdresse = adresse;
 		}
 		if (codePostal.equals("")) {
-			String nouveauCodePostal = ancienCodePostal;
+			nouveauCodePostal = ancienCodePostal;
 		} else {
-			String nouveauCodePostal = codePostal;
+			nouveauCodePostal = codePostal;
 		}
 		if (ville.equals("")) {
-			String nouveauVille = ancienVille;
+			nouveauVille = ancienVille;
 		} else {
-			String nouveauVille = ville;
+			nouveauVille = ville;
 		}
 		if (email.equals("")) {
-			String nouveauEmail = ancienEmail;
+			nouveauEmail = ancienEmail;
 		} else {
-			String nouveauEmail = email;
+			nouveauEmail = email;
 		}
 		int nouveauIdClient = ancienIdClient;
 		int nouveauIdConseiller = ancienIdConseiller;
@@ -101,9 +107,8 @@ public class UpdateServlet2 extends HttpServlet {
 		
 		// 5-appel de la méthode service 
 		ClientService refClientService = new ClientService();
-		Client clientEnBase = refClientService.updateService(nouveauClient);
+		Client clientEnBase = refClientService.modificationService(nouveauClient);
 	}
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

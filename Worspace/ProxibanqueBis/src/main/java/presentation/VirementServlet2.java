@@ -17,17 +17,18 @@ import domaine.CompteCourant;
 import domaine.CompteEpargne;
 import service.ClientService;
 import service.CompteService;
-@WebServlet("/comptes")
+import service.VirementService;
+@WebServlet("/virement2")
 /**
  * Servlet implementation class ComptesServlet
  */
-public class ComptesServlet extends HttpServlet {
+public class VirementServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ComptesServlet() {
+    public VirementServlet2() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,22 +38,15 @@ public class ComptesServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int idClient = Integer.parseInt(request.getParameter("clientC"));
-		ClientService refClientService = new ClientService();
-		Client refClient = refClientService.lectureService(idClient);
-		HttpSession refSession = request.getSession();
-		refSession.setAttribute("clientCompte", refClient);
+		int idcompte1 = Integer.parseInt(request.getParameter("idCompteDebit"));
+		int idcompte2 = Integer.parseInt(request.getParameter("idCompteCredit"));
+		double somme = Double.parseDouble(request.getParameter("somme"));
+		
+		VirementService refVirementService = new VirementService();
+		refVirementService.virement(idcompte1,idcompte2,somme);
+		
 
-		RequestDispatcher dispatcher;
-		dispatcher = request.getRequestDispatcher("Comptes.jsp");
-		dispatcher.forward(request, response);
 
-		CompteService refCompteService = new CompteService();
-		List<Compte> refListe = refCompteService.getAllService(idClient);
-		CompteCourant refCompteCourant = refCompteService.lectureCourant(idClient);
-		CompteEpargne refCompteEpargne = refCompteService.lectureEpargne(idClient);
-		refSession.setAttribute("Courant", refCompteCourant);
-		refSession.setAttribute("Epargne", refCompteEpargne);
 	}
 
 	/**

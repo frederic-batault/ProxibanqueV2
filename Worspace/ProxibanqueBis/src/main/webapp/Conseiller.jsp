@@ -81,7 +81,7 @@
 			</div>
 			<form method="POST" action="update">
 				<p>
-					n° de client : </label> <input class="form-control" type="text" id="client"
+					<label>n° de client : </label> <input class="form-control" type="text" id="client"
 						name="clientU">
 
 					<button type="submit" class="btn btn-primary">Mettre à
@@ -103,9 +103,7 @@
 			</form>
 			<form method="POST" action="virement">
 				<p>
-					<label for="client" class="col-4 col-form-label">n° de
-						client : </label> <input class="form-control" type="text" id="client"
-						name="clientV">
+					
 
 					<button type="submit" class="btn btn-primary">Virement</button>
 				</p>

@@ -14,7 +14,7 @@
 </head>
 <body>
 	<%
-		Client refClient = (Client) session.getAttribute("clientU");
+		Client refClient = (Client) session.getAttribute("clientC");
 	%>
 	<div class=container>
 		<div class="logo1">
@@ -39,42 +39,42 @@
 				<label for="nom" class="col-2 col-form-label">Nom</label>
 				<div class="col-10">
 					<input class="form-control" type="text"
-						value=<%=refClient.getNom()%> id="nom" name="nom">
+						placeholder=<%=refClient.getNom()%> id="nom" name="nom">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="prenom" class="col-2 col-form-label">Prénom</label>
 				<div class="col-10">
 					<input class="form-control" type="text"
-						value=<%=refClient.getPrenom()%> id="prenom" name='prenom"'>
+						placeholder=<%=refClient.getPrenom()%> id="prenom" name='prenom"'>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="adresse" class="col-2 col-form-label">Adresse</label>
 				<div class="col-10">
 					<input class="form-control" type="text"
-						value=<%=refClient.getAdresse()%> id="adresse" name="adresse">
+						placeholder=<%=refClient.getAdresse()%> id="adresse" name="adresse">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="code" class="col-2 col-form-label">Code postal</label>
 				<div class="col-10">
 					<input class="form-control" type="text"
-						value=<%=refClient.getCodePostale()%> id="code" name="code">
+						placeholder=<%=refClient.getCodePostale()%> id="code" name="code">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="ville" class="col-2 col-form-label">Ville</label>
 				<div class="col-10">
 					<input class="form-control" type="text"
-						value=<%=refClient.getVille()%> id="villle" name="ville">
+						placeholder=<%=refClient.getVille()%> id="villle" name="ville">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="mail" class="col-2 col-form-label">E-mail</label>
 				<div class="col-10">
 					<input class="form-control" type="text"
-						value=<%=refClient.getEmail()%> id="mail" name="mail">
+						placeholder=<%=refClient.getEmail()%> id="mail" name="mail">
 				</div>
 			</div>
 			<button type="submit" class="btn btn-primary">Modifier</button>

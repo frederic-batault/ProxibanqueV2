@@ -52,12 +52,12 @@ public class CourantServlet extends HttpServlet {
 		CompteEpargne refCompteEpargne = (CompteEpargne) refSession.getAttribute("Epargne");
 
 		// 2-appel de la méthode service
-		CompteService refCompteService = new CompteService();
-		if (credit.equals("true")) {
-			boolean retour = refCompteService.credit(refCompteCourant, somme);
-		} else {
-			boolean retour = refCompteService.debit(refCompteCourant, somme);
-		}
+//		CompteService refCompteService = new CompteService();
+//		if (credit.equals("true")) {
+//			boolean retour = refCompteService.credit(refCompteCourant, somme);
+//		} else {
+//			boolean retour = refCompteService.debit(refCompteCourant, somme);
+//		}
 	}
 
 	/**
