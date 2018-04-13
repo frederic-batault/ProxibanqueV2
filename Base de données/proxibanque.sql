@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 12 Avril 2018 à 16:47
+-- Généré le :  Ven 13 Avril 2018 à 14:15
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `proxibanque`
 --
+CREATE DATABASE IF NOT EXISTS `proxibanque` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `proxibanque`;
 
 -- --------------------------------------------------------
 
@@ -63,6 +65,14 @@ CREATE TABLE `compte` (
   `tauxRemuneration` double DEFAULT NULL,
   `idClient` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `compte`
+--
+
+INSERT INTO `compte` (`idCompte`, `solde`, `typeCompte`, `decourvertAutorise`, `tauxRemuneration`, `idClient`) VALUES
+(1, 750, 'CompteCourant', -1000, NULL, 1),
+(2, 250, 'CompteEpargne', NULL, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -125,7 +135,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT pour la table `compte`
 --
 ALTER TABLE `compte`
-  MODIFY `idCompte` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCompte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `conseiller`
 --
