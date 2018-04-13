@@ -1,5 +1,9 @@
 package domaine;
 
+/**
+ * @author HEDI I., BATAULT F.
+ *
+ */
 public class Conseiller {
 	
 	private int idConseiller;

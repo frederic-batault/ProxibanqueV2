@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="domaine.Client"%>
+<%@ page import="domaine.ClientCompte"%>
 <%@ page import="domaine.CompteEpargne"%>
 <%@ page import="domaine.CompteCourant"%>
 <%@ page import="domaine.Compte"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.ArrayList"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -46,13 +50,13 @@
 				</thead>
 				<tbody>
 
-					<c:forEach items="${listeClientCompte}" var="lesComptes">
+					<c:forEach items="${listeClients}" var="lesComptes">
 
 						<tr>
 							<td><c:out value="${lesComptes.idCompte}" /></td>
 							<td><c:out value="${lesComptes.nom}" /></td>
 							<td><c:out value="${lesComptes.prenom}" /></td>
-							<td><c:out value="${lesComptes.solde}" /></td>
+							<td><c:out value="${lesComptes.soldes}" /></td>
 
 
 						</tr>
@@ -74,9 +78,8 @@
 						name="idCompteCredit">
 				</p>
 				<p>
-					<label>Somme à virer : </label> <input
-						class="form-control" type="text" id="somme"
-						name="somme">
+					<label>Somme à virer : </label> <input class="form-control"
+						type="text" id="somme" name="somme">
 				</p>
 
 				<button type="submit" class="btn btn-primary">Réaliser le

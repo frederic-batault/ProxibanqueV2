@@ -12,9 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import domaine.Client;
+import domaine.ClientCompte;
 import domaine.Compte;
 import domaine.CompteCourant;
 import domaine.CompteEpargne;
+import domaine.Conseiller;
 import service.ClientService;
 import service.CompteService;
 @WebServlet("/virement")
@@ -39,19 +41,23 @@ public class VirementServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		ClientService refClientService = new ClientService();
-		Client refClient = refClientService.lectureService(idClient);
+//		Client refClient = refClientService.lectureService(idClient);
 		HttpSession refSession = request.getSession();
-		refSession.setAttribute("clientVirement", refClient);
+//		refSession.setAttribute("clientVirement", refClient);
+		Conseiller refConseiller = (Conseiller) refSession.getAttribute("conseiller");
+		int idConseiller = refConseiller.getIdConseiller();
 
+
+		
+		ClientCompte refClientCompte = new ClientCompte();
+		CompteService refCompteService = new CompteService();
+		List<ClientCompte> refListe = refCompteService.getAllService(idConseiller);
+		System.out.println("LISSSSSSSSSSSSSSSSSSSSSTE : " +refListe);
+		refSession.setAttribute("listeClients", refListe);
+		
 		RequestDispatcher dispatcher;
 		dispatcher = request.getRequestDispatcher("Virement.jsp");
 		dispatcher.forward(request, response);
-		
-		ClientCompte refClientCompte = new ClientCompte;
-		CompteService refCompteService = new CompteService();
-		List<ClientCompte> refListe = refComptetService.getAllService(idConseiller);
-		refSession.setAttribute("listeClients", refListe);
-
 
 	}
 

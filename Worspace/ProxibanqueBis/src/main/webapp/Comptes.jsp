@@ -34,7 +34,7 @@
 				<%=refClient.getNom()%></h1>
 				<% HttpSession refSession = request.getSession();
 				CompteCourant refCompteCourant=(CompteCourant)refSession.getAttribute("Courant");
-				out.println(refCompteCourant.getSoldes());
+				
 				CompteEpargne refCompteEpargne=(CompteEpargne)refSession.getAttribute("Epargne");%>
 		
 		</div>

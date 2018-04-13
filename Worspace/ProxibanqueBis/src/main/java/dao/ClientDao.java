@@ -10,8 +10,20 @@ import java.util.List;
 
 import domaine.Client;
 
+/**
+ * @author HEDI I., BATAULT F.
+ *
+ */
+/**
+ * La classe clientDao permet d'avoir une interaction entre la base de donne et  la couche Dao du client
+ */
 public class ClientDao {
 
+	/**
+	 * @param idConseiller
+	 * @return
+	 * Methode qui permet de recuperer tous la liste des comptes rattacher à un client de la base de donne
+	 */
 	public List<Client> getAll(int idConseiller) {
 		List<Client> liste = new ArrayList<Client>();
 
@@ -64,6 +76,11 @@ public class ClientDao {
 	}
 
 	// méthode UPDATE
+	/**
+	 * @param client
+	 * @return
+	 * Methode qui permet de modifier les informations d'un client dans la base de donne
+	 */
 	public Client modificationClient(Client client) {
 
 		// driver
@@ -109,6 +126,11 @@ public class ClientDao {
 	}
 
 	// suppression Client
+	/**
+	 * @param client
+	 * @return
+	 * Methode qui permet de supprimer un client de la base de donne
+	 */
 	public boolean suppressionClient(Client client) {
 
 		// driver
@@ -146,6 +168,11 @@ public class ClientDao {
 	}
 
 	// méthode CREATE
+	/**
+	 * @param client
+	 * @return
+	 * Methode qui permet d'ajouter un client dans la base de donner
+	 */
 	public boolean creationClient(Client client) {
 
 		// driver
@@ -180,6 +207,11 @@ public class ClientDao {
 		}
 	}
 	// méthode GET: lecture client
+		/**
+		 * @param idClient
+		 * @return
+		 * Methode qui permet de recuperer les information d'un clientvenant de la base de donné
+		 */
 		public Client lectureClient(int idClient) {
 		Client client = new Client();
 

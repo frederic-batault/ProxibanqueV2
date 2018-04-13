@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import domaine.Client;
+import domaine.ClientCompte;
 import domaine.Compte;
 import domaine.CompteCourant;
 import domaine.CompteEpargne;
@@ -48,7 +49,7 @@ public class ComptesServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 
 		CompteService refCompteService = new CompteService();
-		List<Compte> refListe = refCompteService.getAllService(idClient);
+		List<ClientCompte> refListe = refCompteService.getAllService(idClient);
 		CompteCourant refCompteCourant = refCompteService.lectureCourant(idClient);
 		CompteEpargne refCompteEpargne = refCompteService.lectureEpargne(idClient);
 		refSession.setAttribute("Courant", refCompteCourant);

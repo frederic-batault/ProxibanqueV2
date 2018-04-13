@@ -11,8 +11,22 @@ import java.util.List;
 import domaine.Client;
 import domaine.Conseiller;
 
+/**
+ * @author HEDI I., BATAULT F.
+ *
+ */
+/**
+ * La classe conseillerDao permet d'avoir une interaction entre la base de donne et  la couche Dao conseiller
+ */
 public class ConseillerDao {
 
+	/**
+	 * @param log
+	 * @return
+	 */
+	/**
+	 * Methode qui permet de recuperer le login et le mot de passe
+	 */
 	public Conseiller lecture(String log) {
 		// ETAPE1: chargement du driver
 
