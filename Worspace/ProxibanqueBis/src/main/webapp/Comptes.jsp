@@ -18,7 +18,6 @@
 <body>
 	<%
 		Client refClient = (Client) session.getAttribute("clientC");
-	
 	%>
 	<div class=container>
 		<div class="logo1">
@@ -33,12 +32,21 @@
 			<h1>
 				Comptes du client<%=refClient.getPrenom()%>
 				<%=refClient.getNom()%></h1>
+				<% HttpSession refSession = request.getSession();
+				CompteCourant refCompteCourant=(CompteCourant)refSession.getAttribute("Courant");
+				CompteEpargne refCompteEpargne=(CompteEpargne)refSession.getAttribute("Epargne");%>
+		
 		</div>
 		<div class="row">
 			<div class="col-lg-6">
+
 				<h2>Compte courant</h2>
-				<h3>Solde: <%=refCompteCourant.getSolde()%> euros</h3>
-				<h3>Découvert autorisé: <%=refCompteCourant.getDecouvertAutorise()%> euros</h3>
+				<h3>
+					Solde:
+					<%=refCompteCourant.getSoldes()%>
+					euros
+				</h3>
+
 				<form method="POST" action="actionCourant">
 					<h1>Débit/Crédit</h1>
 					<label for="somme" class="col-2 col-form-label">Somme</label> <input
@@ -61,8 +69,12 @@
 			</div>
 			<div class="col-lg-6">
 				<h2>Compte épargne</h2>
-				<h3>Solde: <%=refCompteEpargne.getSolde()%> euros</h3>
-				<h3>Taux de rénumération: <%=refCompteEpargne.getTauxRenumeration()%> %</h3>
+				<h3>
+					Solde:
+					<%=refCompteEpargne.getSoldes()%>
+					euros
+				</h3>
+
 				<form method="POST" action="actionEpargne">
 					<h1>Débit/Crédit</h1>
 					<label for="somme" class="col-2 col-form-label">Somme</label> <input

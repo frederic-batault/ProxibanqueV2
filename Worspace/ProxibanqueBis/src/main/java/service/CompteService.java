@@ -10,9 +10,9 @@ import domaine.Compte;
 public class CompteService {
 
 	// LECTURE DE TOUS LECTURE DE TOUS LES COMPTE
-	public List<Compte> getAllService(int idCompte) {
+	public List<Compte> getAllService(int idClient) {
 		CompteDao refdao = new CompteDao();
-		List<Compte> liste = refdao.getAll(idCompte);
+		List<Compte> liste = refdao.getAll(idClient);
 		return liste;
 	}
 
