@@ -6,6 +6,8 @@ import dao.ClientDao;
 import dao.CompteDao;
 import domaine.Client;
 import domaine.Compte;
+import domaine.CompteCourant;
+import domaine.CompteEpargne;
 
 public class CompteService {
 
@@ -23,12 +25,18 @@ public class CompteService {
 		return refCompte2;
 	}
 
-	// METHODE pour LIRE
-	public Compte lectureService(int idCompte) {
+	// METHODE pour LIRE compte Courant
+	public CompteCourant lectureCourant(int idClient) {
 		CompteDao refdao = new CompteDao();
-		Compte refCompte = refdao.lectureCompte(idCompte);
+		CompteCourant refCompte = refdao.lectureCompteCourant(idClient);
 		return refCompte;
 	}
+	// METHODE pour LIRE compte Courant
+		public CompteEpargne lectureEpargne(int idClient) {
+			CompteDao refdao = new CompteDao();
+			CompteEpargne refCompte = refdao.lectureCompteEpargne(idClient);
+			return refCompte;
+		}
 
 	// METHODE POUR DELETE
 	public boolean suppressionService(Compte refCompte) {

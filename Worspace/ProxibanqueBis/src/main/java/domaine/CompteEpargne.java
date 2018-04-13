@@ -2,27 +2,17 @@ package domaine;
 
 public class CompteEpargne extends Compte {
 
-	private double TauxRemuneration;
-
-	// Constructeur
-
-	public CompteEpargne(int idCompte, double soldes, String typeCompte, double tauxRemuneration) {
-		super(idCompte, soldes, typeCompte);
-		TauxRemuneration = tauxRemuneration;
+	public CompteEpargne() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public CompteEpargne(int idCompte, double soldes, String typeCompte) {
-		super(idCompte, soldes, typeCompte);
+	public CompteEpargne(int idCompte, double soldes, String typeCompte, int idClient) {
+		super(idCompte, soldes, typeCompte, idClient);
+		// TODO Auto-generated constructor stub
 	}
 
-	// getteur et setteur
+	
 
-	public double getTauxRemuneration() {
-		return TauxRemuneration;
-	}
-
-	public void setTauxRemuneration(double tauxRemuneration) {
-		TauxRemuneration = tauxRemuneration;
-	}
-
+	// to string
 }

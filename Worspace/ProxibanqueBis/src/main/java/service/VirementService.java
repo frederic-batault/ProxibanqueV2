@@ -4,22 +4,8 @@ import dao.CompteDao;
 import domaine.Compte;
 import domaine.CompteCourant;
 
-public class VirementService extends CompteCourant{
-	
-	private double somme;
-	 
-	public VirementService(int idCompte, double soldes, String typeCompte) {
-		super(idCompte, soldes, typeCompte);
-		// TODO Auto-generated constructor stub
-	}
-	
-	public double getSomme() {
-		return somme;
-	}
-
-	public void setSomme(double somme) {
-		this.somme = somme;
-	}
+public class VirementService extends Compte{
+		 
 
 	public void lectureService1(int idCompte) {
 		CompteDao refdao = new CompteDao();
@@ -31,13 +17,7 @@ public class VirementService extends CompteCourant{
 		Compte compte=new Compte();
 		compte= refCompte.get;
 		
-		if (somme > getdecouvertAutorisé() ) {
-			setSoldes(getSolde() + somme);
-			return true;
-			
-			
-			return true;
-		}
+		
 		return false;
 	}
 

@@ -5,17 +5,18 @@ public class Compte {
 	private int idCompte;
 	private double soldes;
 	private String typeCompte;
+	private int idClient;
 	
 	// constructeur
 	
-	public Compte(int idCompte, double soldes, String typeCompte) {
+	public Compte(int idCompte, double soldes, String typeCompte, int idClient) {
 		super();
 		this.idCompte = idCompte;
 		this.soldes = soldes;
 		this.typeCompte = typeCompte;
+		this.idClient = idClient;
 	}
 
-	
 	public Compte() {
 		super();
 	}
@@ -44,6 +45,14 @@ public class Compte {
 
 	public void setTypeCompte(String typeCompte) {
 		this.typeCompte = typeCompte;
+	}
+
+	public int getIdClient() {
+		return idClient;
+	}
+
+	public void setIdClient(int idClient) {
+		this.idClient = idClient;
 	}
 
 }
