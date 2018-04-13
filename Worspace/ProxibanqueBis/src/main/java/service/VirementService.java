@@ -6,8 +6,6 @@ import domaine.CompteCourant;
 
 public class VirementService extends CompteCourant{
 	
-	
-
 	private double somme;
 	 
 	public VirementService(int idCompte, double soldes, String typeCompte) {
@@ -33,7 +31,7 @@ public class VirementService extends CompteCourant{
 		Compte compte=new Compte();
 		compte= refCompte.get;
 		
-		if (somme > getdecouvertAutorisé ) {
+		if (somme > getdecouvertAutorisé() ) {
 			setSoldes(getSolde() + somme);
 			return true;
 			
